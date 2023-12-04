@@ -53,10 +53,14 @@ defmodule DayOne do
   end
 end
 
-one_star = File.read!("./inputs/dayone.txt")
-|> DayOne.one_star_solver()
+one_star =
+  File.read!("./inputs/dayone.txt")
+  |> DayOne.one_star_solver()
+
 IO.puts("One star result: #{one_star}")
 
-two_star = File.read!("./inputs/dayone.txt")
-|> DayOne.two_star_solver()
+two_star =
+  File.read!("./inputs/dayone.txt")
+  |> DayOne.two_star_solver()
+
 IO.puts("Two star result: #{two_star}")
