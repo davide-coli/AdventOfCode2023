@@ -53,6 +53,7 @@ defmodule DayFour do
         |> Enum.filter(fn %{:idx => idx} -> idx > 0 end)
         |> Enum.map(&Map.get(&1, :quantity))
         |> Enum.sum()
+
       n_cards = temp + 1
 
       new_sums =
@@ -60,9 +61,10 @@ defmodule DayFour do
         |> Enum.map(fn
           %{:idx => idx, :quantity => quantity} -> %{:idx => idx - 1, :quantity => quantity}
         end)
+
       n_winning_cards = MapSet.intersection(cv.winning, cv.played) |> MapSet.size()
 
-      { new_sums ++ [ %{:idx => n_winning_cards, :quantity => n_cards}], result + n_cards}
+      {new_sums ++ [%{:idx => n_winning_cards, :quantity => n_cards}], result + n_cards}
     end)
     |> elem(1)
   end
