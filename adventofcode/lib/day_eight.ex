@@ -86,7 +86,7 @@ defmodule NodeTrack do
   defstruct idx: 0, node: ""
 end
 
-defmodule Day8 do
+defmodule DayEight do
   @regex_instructions ~r/^[RL]+/
   @regex_moves ~r/([A-Z0-9]{3}) = \(([A-Z0-9]{3}), ([A-Z0-9]{3})\)/
 
@@ -239,8 +239,8 @@ end
 
 text = File.read!("./inputs/dayeight.txt")
 
-one_star = Day8.one_star(text)
-two_stars = Day8.two_stars(text)
+one_star = DayEight.one_star(text)
+two_stars = DayEight.two_stars(text)
 
 IO.puts("""
 One star: #{one_star}
